@@ -13,8 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('/hello', function () {
-    return view('hello');
+Route::get('starter', function () {
+    return view('starter');
 });
 
 Route::get('/user/{name?}', function ($name = 'Nobody') {
@@ -24,3 +24,5 @@ Route::get('/user/{name?}', function ($name = 'Nobody') {
     */
     return 'Hi, ' . strtoupper($name);
 });
+
+//Route::get('dist/css')
