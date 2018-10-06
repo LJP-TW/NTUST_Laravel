@@ -13,10 +13,6 @@
 
 Route::get('/', 'HomeController@index');
 
-Route::get('starter', function () {
-    return view('starter');
-});
-
 Route::get('/user/{name?}', function ($name = 'Nobody') {
     /*
     後面接問號代表參數可給可不給
@@ -25,4 +21,6 @@ Route::get('/user/{name?}', function ($name = 'Nobody') {
     return 'Hi, ' . strtoupper($name);
 });
 
-//Route::get('dist/css')
+Route::get('products', function() {
+   return view('products.index');
+});
