@@ -20,7 +20,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::orderBy('created_at', 'DESC')->get();
+        $products = Product::orderBy('id', 'ASC')->get();
 
         $data = [
             'products' => $products
@@ -78,6 +78,19 @@ class ProductController extends Controller
     {
         $product->update($request->all());
 
+        return redirect()->route('products.index');
+    }
+
+    /**
+     * Delete record from database
+     *
+     * @param Product $product
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Exception
+     */
+    public function delete(Product $product)
+    {
+        $product->delete();
         return redirect()->route('products.index');
     }
 }

@@ -37,4 +37,4 @@ Route::get('/products/{product}/edit', 'ProductController@edit')->name('products
 
 Route::patch('/products/{product}', 'ProductController@update')->name('products.update');
 
-// destroy
+Route::delete('/products/{product}', 'ProductController@delete')->name('products.destroy');
